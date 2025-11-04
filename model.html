@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booking Confirmation - Ikraam Beauty Salon</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <nav class="nav">
+    <div class="container">
+      <h1><a href="home.html">Ikraam Beauty Salon</a></h1>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="prices.html">Prices</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+      <a href="register.html" class="btn book-btn">Book Now</a>
+    </div>
+  </nav>
+
+  <!-- ===== Confirmation Section ===== -->
+  <section class="container confirmation">
+    <h2>Your Booking Details</h2>
+
+    <div class="confirm-card">
+      <p><strong>Name:</strong> <span id="bkName">—</span></p>
+      <p><strong>Service:</strong> <span id="bkService">—</span></p>
+      <p><strong>Price:</strong> <span id="bkPrice">—</span></p>
+      <p><strong>Date:</strong> <span id="bkDate">—</span></p>
+    </div>
+
+    <div class="section-actions">
+      <button class="btn" onclick="window.print()">🧾 Print Receipt</button>
+      <a class="btn" href="register.html">➕ New Booking</a>
+      <a class="btn btn-outline" href="home.html">🏠 Back Home</a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="container footer">
+    <p>&copy; <span id="year"></span> Ikraam Beauty Salon</p>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script src="javascript.js"></script>
+  <script>
+    // Auto-fill footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Load booking data from localStorage
+    (function(){
+      const n = document.getElementById("bkName");
+      const s = document.getElementById("bkService");
+      const p = document.getElementById("bkPrice");
+      const d = document.getElementById("bkDate");
+
+      const raw = localStorage.getItem("ikraam_booking");
+      if(!raw){
+        // Haddii aan booking jirin → u dir Register
+        window.location.href = "register.html";
+        return;
+      }
+
+      try {
+        const data = JSON.parse(raw);
+        n.textContent = data.name || "—";
+        s.textContent = data.service || "—";
+        p.textContent = data.price || "—";
+        d.textContent = data.date || "—";
+
+        // Xogtii hore ka saar si aan mar labaad u soo bixin
+        localStorage.removeItem("ikraam_booking");
+
+      } catch (e) {
+        // Error parsing JSON → u dir Register
+        window.location.href = "register.html";
+      }
+    })();
+  </script>
+
+</body>
+</html>
