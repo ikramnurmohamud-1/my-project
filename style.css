@@ -1,0 +1,233 @@
+/* ===============================
+   Ikraam Beauty Salon - style.css
+   (Home, Services, Prices, Register, Confirmation, Modal)
+   Clean, minimal, mobile-friendly
+==================================*/
+
+/* --- Reset & Base --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: Arial, sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.5;
+  /* nav is fixed; keep content visible below it */
+  padding-top: 78px;
+}
+img { max-width: 100%; display: block; }
+
+/* --- Containers & Headings --- */
+.container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+h1, h2, h3 { font-weight: 700; }
+h2 { text-align: center; margin-bottom: 32px; font-size: 32px; }
+.section-actions {
+  margin-top: 24px;
+  display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+}
+
+/* --- Navigation (fixed) --- */
+nav {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  background: #222;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.nav .container, nav .container {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px;
+}
+nav h1 a {
+  color: #fff; text-decoration: none; font-size: 22px; font-weight: 800; letter-spacing: .2px;
+}
+nav ul { list-style: none; display: flex; gap: 26px; }
+nav ul li a {
+  color: #fff; text-decoration: none; font-size: 15px; transition: color .2s ease;
+}
+nav ul li a:hover, nav ul li a.active { color: #f39c12; }
+.book-btn { white-space: nowrap; }
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block; padding: 10px 18px; border-radius: 8px;
+  background: #f39c12; color: #fff; border: none; cursor: pointer;
+  text-decoration: none; font-weight: 600; transition: background .2s ease, transform .1s ease;
+}
+.btn:hover { background: #d78b0f; }
+.btn:active { transform: scale(.98); }
+.btn-outline {
+  background: transparent; color: #f39c12; border: 2px solid #f39c12;
+}
+.btn-outline:hover { background: #f39c12; color: #fff; }
+
+/* --- Hero (Home) --- */
+.hero {
+  background-image: url("https://images.pexels.com/photos/705255/pexels-photo-705255.jpeg");
+  background-size: cover; background-position: center;
+  min-height: 78vh; display: grid; place-items: center; text-align: center; color: #fff;
+  position: relative;
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.5);
+}
+.hero-content { position: relative; max-width: 800px; padding: 20px; }
+.hero h1 { font-size: 48px; margin-bottom: 16px; }
+.hero p { font-size: 18px; }
+
+/* --- Services --- */
+#services {
+  background-image: url("images/pexels-cottonbro-3993308.jpg");
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+  color: #fff; position: relative; border-radius: 12px; overflow: hidden;
+}
+#services::before { content:""; position:absolute; inset:0; background: rgba(0,0,0,.32); }
+#services > * { position: relative; z-index: 1; }
+
+.services-gallery {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px; justify-content: center; margin-top: 12px;
+}
+.service-item {
+  background: rgba(255,255,255,.96);
+  border-radius: 12px; overflow: hidden; text-align: center;
+  color: #333; box-shadow: 0 4px 8px rgba(0,0,0,.18);
+  transition: transform .2s ease, box-shadow .2s ease;
+  cursor: pointer; /* because clickable for gallery */
+}
+.service-item:hover { transform: translateY(-3px); box-shadow: 0 12px 20px rgba(0,0,0,.2); }
+.service-item img { width: 100%; height: 150px; object-fit: cover; }
+.service-item p { padding: 10px; font-weight: 600; }
+
+/* --- Prices --- */
+#prices {
+  background-image: url("https://images.pexels.com/photos/3993117/pexels-photo-3993117.jpeg");
+  background-size: cover; background-position: center; background-repeat: no-repeat;
+  color: #fff; position: relative; border-radius: 12px; overflow: hidden;
+}
+#prices::before { content:""; position:absolute; inset:0; background: rgba(0,0,0,.24); }
+#prices > * { position: relative; z-index: 1; }
+
+.price-gallery {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px; justify-content: center;
+}
+.price-item {
+  background: rgba(255,255,255,.96);
+  border-radius: 12px; overflow: hidden; text-align: center; color: #333;
+  box-shadow: 0 4px 8px rgba(0,0,0,.18);
+  transition: transform .2s ease, box-shadow .2s ease;
+  cursor: pointer; /* clickable for gallery */
+}
+.price-item:hover { transform: translateY(-3px); box-shadow: 0 12px 20px rgba(0,0,0,.2); }
+.price-item img { width: 100%; height: 150px; object-fit: cover; }
+.price-item h3 { padding: 10px; font-size: 16px; font-weight: 700; }
+.price-item p { padding: 0 10px 12px; font-size: 14px; color: #555; }
+
+.price-button-container { text-align:center; margin-top: 20px; }
+.price-btn { @apply: none; } /* no Tailwind; keeps compatibility */
+.price-btn {
+  padding: 12px 24px; font-size: 16px; font-weight: 600;
+  color: #fff; background-color: #f39c12; border: none; border-radius: 8px; cursor: pointer;
+  transition: background-color .2s ease, transform .1s ease;
+}
+.price-btn:hover { background-color: #d78b0f; }
+.price-btn:active { transform: scale(.98); }
+
+/* --- Register --- */
+#register {
+  background-image: url("https://images.pexels.com/photos/3736520/pexels-photo-3736520.jpeg");
+  background-size: cover; background-position: center;
+  color: #fff; border-radius: 12px; position: relative; overflow: hidden;
+}
+#register::before { content:""; position:absolute; inset:0; background: rgba(0,0,0,.36); }
+#register > * { position: relative; z-index: 1; }
+
+.register-form {
+  max-width: 520px; margin: 0 auto; background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 12px; padding: 22px;
+}
+.register-form label { display:block; margin: 8px 0 6px; font-weight: 600; }
+.register-form input {
+  width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px;
+  font-size: 16px; background: #f7f7f7; outline: none;
+}
+.register-form input:focus { border-color: #8ac3ff; }
+.register-form .btn { width: 100%; padding: 14px; background: #3498db; }
+.register-form .btn:hover { background: #2980b9; }
+
+/* Simple inline error bubble (if JS adds it) */
+.input-error {
+  color:#fff; background:#e74c3c; padding:6px 10px; border-radius:6px;
+  font-size:12px; margin:-10px 0 10px;
+}
+
+/* --- Confirmation (confirmation.html) --- */
+.confirmation h2 { text-align:center; margin-bottom: 20px; }
+.confirm-card {
+  max-width: 560px; margin: 0 auto; background: #fff;
+  border: 1px solid #eee; border-radius: 12px; padding: 18px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.08);
+}
+.confirm-card p { margin: 8px 0; }
+
+/* --- Footer --- */
+.footer {
+  padding: 28px 20px; text-align: center; color: #666; background: #f8f8f8;
+  border-top: 1px solid #eee;
+}
+
+/* --- Modal (shared by Services & Prices) --- */
+.modal[hidden]{ display:none !important; }
+.modal{ position:fixed; inset:0; z-index:2000; }
+.modal__backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.55); }
+.modal__dialog{
+  position:relative; z-index:1; max-width:900px; margin:40px auto; background:#fff;
+  border-radius:12px; padding:14px; box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+.modal__close{
+  position:absolute; top:10px; right:12px; border:none; background:transparent;
+  font-size:28px; cursor:pointer;
+}
+.modal__header{ padding:6px 8px 8px; }
+.modal__subtitle{ color:#666; font-size:14px; }
+.modal__media{ position:relative; display:grid; place-items:center; padding:8px; }
+.modal__media img{
+  max-width:100%; max-height:60vh; border-radius:8px; background:#f6f6f6; object-fit:contain;
+}
+.modal__media .nav{
+  position:absolute; top:50%; transform: translateY(-50%);
+  border:none; background:#222; color:#fff; width:36px; height:36px; border-radius:50%;
+  cursor:pointer; opacity:.85;
+}
+.modal__media .prev{ left:8px; } .modal__media .next{ right:8px; }
+.modal__meta{
+  display:flex; justify-content:space-between; align-items:center; gap:10px;
+  padding:8px 10px 2px; flex-wrap:wrap;
+}
+.meta__caption{ color:#333; font-size:14px; }
+.meta__price{ color:#d35400; font-weight:700; }
+.modal__thumbs{
+  display:flex; gap:8px; padding:10px 8px 4px; overflow-x:auto;
+}
+.modal__thumbs button{
+  border:2px solid transparent; border-radius:8px; padding:0; background:transparent; cursor:pointer;
+}
+.modal__thumbs img{
+  width:72px; height:54px; object-fit:cover; border-radius:6px; display:block;
+}
+.modal__thumbs button.active{ border-color:#f39c12; }
+
+/* --- Responsive --- */
+@media (max-width: 900px){
+  .nav .container { flex-direction: column; gap: 12px; }
+  nav ul { flex-wrap: wrap; justify-content: center; }
+}
+@media (max-width: 720px){
+  .hero h1 { font-size: 36px; }
+  .hero p { font-size: 16px; }
+  .service-item img, .price-item img { height: 150px; }
+  .service-item p, .price-item p { font-size: 13px; }
+  .modal__dialog { margin: 20px 10px; }
+  .modal__media img { max-height: 52vh; }
+  .price-btn { width: 100%; max-width: 320px; }
+}
