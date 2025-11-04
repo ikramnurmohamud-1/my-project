@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ikraam Beauty Salon - Prices</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container">
+      <h1><a href="home.html">Ik Beauty</a></h1>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="prices.html" class="active">Prices</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+      <a href="register.html" class="btn book-btn">Book Now</a>
+    </div>
+  </nav>
+
+  <section id="prices" class="container section active">
+    <h2>Our Prices</h2>
+
+    <div class="price-gallery">
+      <div class="price-item" data-gallery-id="price-henna-hands">
+        <img src="images/pexels-vibhor-saxena-697459-2229473.jpg" alt="Henna Hands">
+        <h3>🌸 Cilaan gacmaha</h3>
+        <p>Qiimo: $5</p>
+      </div>
+      <div class="price-item" data-gallery-id="price-henna-legs">
+        <img src="images/white-bowl-with-turmeric-paste-stands-beneath-indian-bride.jpg" alt="Henna Legs">
+        <h3>🌸 Cilaan lugaha</h3>
+        <p>Qiimo: $5</p>
+      </div>
+
+      <div class="price-item" data-gallery-id="price-makeup-bridal">
+        <img src="images/beautiful-female-customer-work-makeup-artist.jpg" alt="Bridal Makeup">
+        <h3>💄 Aroos Makeup</h3>
+        <p>Qiimo: $20-60</p>
+      </div>
+      <div class="price-item" data-gallery-id="price-makeup-party">
+        <img src="images/preparation-hairdresser-makeup-artist.jpg" alt="Party Makeup">
+        <h3>💄 Xaflad Makeup</h3>
+        <p>Qiimo: $15-40</p>
+      </div>
+
+      <div class="price-item" data-gallery-id="price-hair-style">
+        <img src="images/pexels-enginakyurt-3331486.jpg" alt="Hair Styling">
+        <h3>💇 Timo hagaajin</h3>
+        <p>Qiimo: $12-80</p>
+      </div>
+      <div class="price-item" data-gallery-id="price-hair-cut">
+        <img src="images/pexels-cottonbro-3993442.jpg" alt="Hair Cutting">
+        <h3>💇 Timo jarid</h3>
+        <p>Qiimo: $10-30</p>
+      </div>
+
+      <div class="price-item" data-gallery-id="price-facial">
+        <img src="images/pexels-anete-lusina-5240820.jpg" alt="Facial">
+        <h3>🧖 Waji Dhaqis</h3>
+        <p>Qiimo: $15-50</p>
+      </div>
+      <div class="price-item" data-gallery-id="price-massage">
+        <img src="images/pexels-cottonbro-4004470.jpg" alt="Massage">
+        <h3>🧖 Massage</h3>
+        <p>Qiimo: $10-150</p>
+      </div>
+    </div>
+
+   
+
+    <div class="section-actions">
+      <a class="btn btn-outline" href="services.html">⬅ Back to Services</a>
+      <a class="btn" href="register.html">Continue to Register ➜</a>
+    </div>
+  </section>
+
+  <!-- Shared Gallery Modal (same as services) -->
+  <div id="galleryModal" class="modal" hidden>
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-label="Gallery">
+      <button class="modal__close" aria-label="Close" data-close-modal>&times;</button>
+      <div class="modal__header">
+        <h3 id="modalTitle">Welcome Madam/Sir</h3>
+        <p class="modal__subtitle" id="modalSubtitle"></p>
+      </div>
+      <div class="modal__media">
+        <button class="nav prev" id="prevBtn" aria-label="Previous">&#10094;</button>
+        <img id="modalImage" alt="Gallery item"/>
+        <button class="nav next" id="nextBtn" aria-label="Next">&#10095;</button>
+      </div>
+      <div class="modal__meta">
+        <div id="modalCaption" class="meta__caption"></div>
+        <div id="modalPrice" class="meta__price"></div>
+      </div>
+      <div class="modal__thumbs" id="modalThumbs"></div>
+    </div>
+  </div>
+
+  <footer class="container footer">
+    <p>&copy; <span id="year"></span> Ikraam Beauty Salon</p>
+  </footer>
+
+  <script src="javascript.js"></script>
+</body>
+</html>
