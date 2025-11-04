@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ikraam Beauty Salon - Register</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container">
+      <h1><a href="home.html">Ik Beauty</a></h1>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="prices.html">Prices</a></li>
+        <li><a href="register.html" class="active">Register</a></li>
+      </ul>
+      <a href="register.html" class="btn book-btn">Book Now</a>
+    </div>
+  </nav>
+
+  <section id="register" class="container contact">
+    <h2>Register / Book an Appointment</h2>
+
+    <form id="registerForm" class="register-form" novalidate>
+      <label for="name">Your Name</label>
+      <input id="name" name="name" required placeholder="Full name" />
+
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" required placeholder="+252 61 ..." />
+
+      <label for="service">Requested Service</label>
+      <input id="service" name="service" required placeholder="e.g., Bridal Makeup" />
+
+      <label for="date">Preferred Date</label>
+      <input id="date" name="date" type="date" />
+
+      <button type="submit" class="btn">Submit</button>
+    </form>
+
+    <!-- Success card (same page) -->
+    <div id="register-success" style="margin-top:12px; display:none;">
+      <h3>Thanks! Your booking is recorded ✅</h3>
+      <p><strong>Name:</strong> <span id="bkName">—</span></p>
+      <p><strong>Service:</strong> <span id="bkService">—</span></p>
+      <p><strong>Price:</strong> <span id="bkPrice">—</span></p>
+      <p><strong>Date:</strong> <span id="bkDate">—</span></p>
+
+      <div class="section-actions" style="margin-top:8px;">
+        <button id="newBooking" class="btn">Make another booking</button>
+        <a class="btn btn-outline" href="home.html">Back Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Public list of all registered clients -->
+  <section class="container" id="bookingListSection">
+    <h2>All Bookings</h2>
+    <p>Total: <strong id="bookingCount">0</strong></p>
+    <div class="table-wrap">
+      <table class="table" id="bookingTable" style="width:100%; border-collapse:collapse;">
+        <thead>
+          <tr>
+            <th style="text-align:left;">#</th>
+            <th style="text-align:left;">Name</th>
+            <th style="text-align:left;">Phone</th>
+            <th style="text-align:left;">Service</th>
+            <th style="text-align:left;">Price</th>
+            <th style="text-align:left;">Date</th>
+            <th style="text-align:left;">Actions</th>
+          </tr>
+        </thead>
+        <tbody><!-- rows injected by JS --></tbody>
+      </table>
+    </div>
+    <div class="section-actions" style="margin-top:10px;">
+      <button class="btn btn-outline" id="exportBookings">Export JSON</button>
+      <button class="btn btn-outline" id="clearBookings">Clear All</button>
+    </div>
+  </section>
+
+  <footer class="container footer">
+    <p>&copy; <span id="year"></span> Ikraam Beauty Salon</p>
+  </footer>
+
+  <script src="javascript.js"></script>
+</body>
+</html>
