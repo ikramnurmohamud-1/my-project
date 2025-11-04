@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ikraam Beauty Salon - Services</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container">
+      <h1><a href="home.html">Ik Beauty</a></h1>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="prices.html">Prices</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+      <a href="register.html" class="btn book-btn">Book Now</a>
+    </div>
+  </nav>
+
+  <!-- Services Section (unchanged images, just data-gallery-id added) -->
+  <section class="container" id="services">
+    <h2>Our Services</h2>
+
+    <h3>🌸 Henna (Cilaan saar)</h3>
+    <div class="services-gallery">
+      <div class="service-item" data-gallery-id="henna-hands">
+        <img src="images/WhatsApp Image 2025-09-16 at 06.40.36.jpeg" alt="Henna Design Hands">
+        <p>Cilaan gacmaha</p>
+      </div>
+      <div class="service-item" data-gallery-id="henna-legs">
+        <img src="images/white-bowl-with-turmeric-paste-stands-beneath-indian-bride.jpg" alt="Henna Design Legs">
+        <p>Cilaan lugaha</p>
+      </div>
+    </div>
+ 
+    </div>
+
+    <h3>💄 Makeup</h3>
+    <div class="services-gallery">
+      <div class="service-item" data-gallery-id="makeup-bridal">
+        <img src="images/beautiful-female-customer-work-makeup-artist.jpg" alt="Bridal makeup">
+        <p>Aroos Makeup</p>
+       
+
+      </div>
+      <div class="service-item" data-gallery-id="makeup-party">
+        <img src="images/preparation-hairdresser-makeup-artist.jpg" alt="Party makeup">
+        <p>Xaflad Makeup</p>
+        
+
+      </div>
+      <div class="service-item" data-gallery-id="makeup-casual">
+        <img src="images/hand-holding-make-up-brushes (1).jpg" alt="Casual makeup">
+        <p>Casual Makeup</p>
+ 
+      </div>
+    </div>
+
+    <h3>💇 Hair (Timo hagaajis)</h3>
+    <div class="services-gallery">
+      <div class="service-item" data-gallery-id="hair-style">
+        <img src="images/pexels-enginakyurt-3331486.jpg" alt="Hair styling">
+        <p>Timo hagaajin</p>
+        
+      </div>
+      <div class="service-item" data-gallery-id="hair-cut">
+        <img src="images/pexels-cottonbro-3993442.jpg" alt="Hair cutting">
+        <p>Timo jarid</p>
+        
+
+      </div>
+      <div class="service-item" data-gallery-id="hair-dry">
+        <img src="images/pexels-polina-tankilevitch-3738359.jpg" alt="Hair treatment">
+        <p>Foneynta timaha</p>
+      </div>
+    </div>
+   
+
+    <h3>🧖 Skin Care</h3>
+    <div class="services-gallery">
+      <div class="service-item" data-gallery-id="skin-massage">
+        <img src="images/pexels-anete-lusina-5240820.jpg" alt="Massage">
+        <p>Massage</p>
+      </div>
+      
+      <div class="service-item" data-gallery-id="skin-facial">
+        <img src="images/engin-akyurt-g-m8EDc4X6Q-unsplash.jpg" alt="Facial">
+        <p>Waji dhaqis</p>
+      </div>
+    
+    </div>
+
+    <div class="section-actions">
+      <a class="btn btn-outline" href="home.html">⬅ Back Home</a>
+      <a class="btn" href="prices.html">See Prices ➜</a>
+     
+    </div>
+  </section>
+
+  <!-- Shared Gallery Modal -->
+  <div id="galleryModal" class="modal" hidden>
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-label="Gallery">
+      <button class="modal__close" aria-label="Close" data-close-modal>&times;</button>
+      <div class="modal__header">
+        <h3 id="modalTitle">Welcome Madam/Sir</h3>
+        <p class="modal__subtitle" id="modalSubtitle"></p>
+      </div>
+      <div class="modal__media">
+        <button class="nav prev" id="prevBtn" aria-label="Previous">&#10094;</button>
+        <img id="modalImage" alt="Gallery item"/>
+        <button class="nav next" id="nextBtn" aria-label="Next">&#10095;</button>
+      </div>
+      <div class="modal__meta">
+        <div id="modalCaption" class="meta__caption"></div>
+        <div id="modalPrice" class="meta__price"></div>
+      </div>
+      <div class="modal__thumbs" id="modalThumbs"></div>
+    </div>
+  </div>
+
+  <footer class="container footer">
+    <p>&copy; <span id="year"></span> Ikraam Beauty Salon</p>
+  </footer>
+
+  <script src="javascript.js"></script>
+</body>
+</html>
